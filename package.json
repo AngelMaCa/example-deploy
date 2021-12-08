@@ -6,7 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "ng build --prod",
+    "build:prod": "ng build --prod",
+    "deploy": "npm run clean && npm run build:prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

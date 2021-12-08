@@ -18,11 +18,11 @@ steps:
   path: ~/.npm
   key: ${{ runner.os }}-node-${{ hasFiles('**/package-lock.json') }}
   restore-keys: |
-  ${{ runner.os }}-node-
+    ${{ runner.os }}-node-
 - name: Build
   run: |
-  npm install
-  npm run-script deploy
+    npm install
+    npm run-script deploy
 - name: Deploy
   uses: JamesIves/github-pages-deploy-action@releases/v3
   with:

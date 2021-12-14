@@ -1,8 +1,9 @@
 name: Build
 on:
+  pull_request:
+    branches: [master]
   push:
-    branches:
-      - main
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,6 +23,11 @@ jobs:
         run: |
           npm install
           npm run-script deploy
+      - name: Create a release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:

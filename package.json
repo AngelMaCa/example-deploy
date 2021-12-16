@@ -10,6 +10,7 @@
     "deploy": "npm run build:prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:prod": "ng test --watch=false --code-coverage",
     "prepare": "husky install",
     "commit": "cz"
   },

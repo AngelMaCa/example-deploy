@@ -2,9 +2,9 @@ on:
   # Trigger analysis when pushing in master or pull requests, and when creating
   # a pull request.
   pull_request:
-    branches: [develop]
+    branches: [master]
   push:
-    branches: [develop]
+    branches: [master]
 ###############
 # Set the job #
 ###############

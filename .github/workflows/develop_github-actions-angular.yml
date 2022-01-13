@@ -54,3 +54,4 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7CE34F27F120455D96AD8C789E3A8CF2 }}
           package: .
+          customWebConfig: '-Handler iisnode -NodeStartFile server.js -appType node'

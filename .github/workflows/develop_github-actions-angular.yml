@@ -53,4 +53,4 @@ jobs:
           app-name: 'github-actions-angular'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7CE34F27F120455D96AD8C789E3A8CF2 }}
-          package: .
+          package: ./dist/example-deploy

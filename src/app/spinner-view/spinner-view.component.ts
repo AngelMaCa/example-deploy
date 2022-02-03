@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';  
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { LoadingService } from '../loading.service';
 
 @Component({
   selector: 'app-spinner-view',
@@ -7,9 +8,8 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
   styleUrls: ['./spinner-view.component.css']
 })
 export class SpinnerViewComponent implements OnInit {
-
-  constructor(
-      public dialogRef: MatDialogRef<SpinnerViewComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {}
+  
+  constructor() {}
 
   ngOnInit(): void {
   }

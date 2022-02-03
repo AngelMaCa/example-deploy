@@ -5,10 +5,8 @@ import { AppComponent } from './app.component';
 import { SpinnerViewComponent } from './spinner-view/spinner-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterModule } from '@angular/router';
-import { SpinnerServiceService } from './spinner-service.service';
-import { MyLibModule } from 'projects/my-lib/src/public-api';
 
 @NgModule({
   declarations: [
@@ -23,10 +21,9 @@ import { MyLibModule } from 'projects/my-lib/src/public-api';
     BrowserAnimationsModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    RouterModule,
-    MyLibModule
+    RouterModule
   ],
-  providers: [SpinnerServiceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

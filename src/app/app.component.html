@@ -1,1 +1,4 @@
-<lib-my-lib></lib-my-lib>
+<button mat-raised-button (click)="loader.show()">show</button>
+<button mat-raised-button (click)="loader.hide()">Hide</button>
+
+<app-spinner-view *ngIf="loading$ |async "></app-spinner-view>

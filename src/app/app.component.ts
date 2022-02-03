@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SpinnerServiceService } from './spinner-service.service';
+import { LoadingService } from './loading.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,11 @@ import { SpinnerServiceService } from './spinner-service.service';
 })
 export class AppComponent {
   title = 'example-deploy';
-  constructor(private spinner: SpinnerServiceService){
-    // this.spinner.start();
+  loading$ = this.loader.loading$;
+
+  constructor(
+    public loader: LoadingService
+  ){
   }
+
 }

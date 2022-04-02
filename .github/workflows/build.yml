@@ -23,7 +23,7 @@ jobs:
         run: |
           npm install
           env:
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            NPM_TOKEN: ${{ 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 }}
           npm run-script deploy
       - name: Create a release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'

@@ -12,7 +12,9 @@ jobs:
         uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
+          always-auth: true
           node-version: '14.x'
+          registry: https://npm.pkg.github.com/AngelMaCa
       - uses: actions/cache@v1
         with:
           path: ~/.npm

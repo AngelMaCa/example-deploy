@@ -12,12 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       # Update package version and set up git
-      - uses: actions/setup-node@master
       - name: Update package version and setup git
         run: |
           git config user.name "AngelMaCa"
           git config user.email angel.mani@eon.com.mx
-      - name: Update package version and setup git
+      - uses: actions/setup-node@master
         with:
           node-version: '14.x'
       - uses: actions/cache@v1

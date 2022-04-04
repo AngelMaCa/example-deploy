@@ -20,7 +20,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Authenticate with GitHub package registry
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+        run: "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}"
       - name: Build
         run: |
           npm install

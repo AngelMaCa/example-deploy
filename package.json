@@ -17,7 +17,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angelmaca/test-security-library": "npm:@AngelMaCa/test-security-library@^0.0.4",
+    "@angelmaca/test-security-library": "npm:@angelmaca/test-security-library@^0.0.4",
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "^12.2.13",
     "@angular/common": "~12.2.0",

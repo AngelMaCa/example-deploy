@@ -13,20 +13,18 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14.x'
-          registry-url: https://npm.pkg.github.com/
-          scope: '@AngelMaCa'
       - uses: actions/cache@v1
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+      - name: Authenticate with GitHub package registry
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Build
         run: |
           npm install
           npm run-script deploy
-        env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Create a release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npx semantic-release

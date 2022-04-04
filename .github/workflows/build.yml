@@ -8,9 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    # Checkout the repo
       - name: Checkout
-        uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+        uses: actions/checkout@master
+      - uses: actions/setup-node@master
+      - name: Update package version and setup git
+        run: |
+          git config user.name "AngelMaCa"
+          git config user.email angel.mani@eon.com.mx
         with:
           node-version: '14.x'
       - uses: actions/cache@v1
@@ -34,6 +39,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           BRANCH: gh-pages
           FOLDER: dist/example-deploy

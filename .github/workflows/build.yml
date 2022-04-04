@@ -13,9 +13,6 @@ jobs:
         uses: actions/checkout@master
       - uses: actions/setup-node@master
       - name: Update package version and setup git
-        run: |
-          git config user.name "AngelMaCa"
-          git config user.email angel.mani@eon.com.mx
         with:
           node-version: '14.x'
       - uses: actions/cache@v1
@@ -28,6 +25,8 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > .npmrc
       - name: Build
         run: |
+          git config user.name "AngelMaCa"
+          git config user.email angel.mani@eon.com.mx
           npm install
           npm run-script deploy
       - name: Create a release

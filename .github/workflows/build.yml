@@ -15,8 +15,8 @@ jobs:
       - uses: actions/setup-node@master
       - name: Update package version and setup git
         run: |
-          git config user.name "Actions User"
-          git config user.email noreply@github.com
+          git config user.name "AngelMaCa"
+          git config user.email angel.mani@eon.com.mx
       - name: Update package version and setup git
         with:
           node-version: '14.x'

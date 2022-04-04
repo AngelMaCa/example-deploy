@@ -8,10 +8,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # Checkout the repo
+      # Checkout the repo
       - name: Checkout
         uses: actions/checkout@master
+      # Update package version and set up git
       - uses: actions/setup-node@master
+      - name: Update package version and setup git
+        run: |
+          git config user.name "Actions User"
+          git config user.email noreply@github.com
       - name: Update package version and setup git
         with:
           node-version: '14.x'
@@ -25,8 +30,6 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > .npmrc
       - name: Build
         run: |
-          git config user.name "AngelMaCa"
-          git config user.email angel.mani@eon.com.mx
           npm install
           npm run-script deploy
       - name: Create a release

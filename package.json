@@ -27,7 +27,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
-    "@mani-test-organization/test-security-library": "^8.1.1649127012",
+    "@mani-test-organization/test-security-library": "^8.1.1649128561",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

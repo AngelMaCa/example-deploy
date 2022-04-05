@@ -23,7 +23,7 @@ jobs:
           npm install
           npm run-script deploy
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
       - name: Create a release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npx semantic-release

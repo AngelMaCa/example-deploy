@@ -1,5 +1,5 @@
 {
-  "name": "example-deploy",
+  "name": "@mani-test-organization/example-deploy",
   "version": "0.0.0",
   "homepages": "example-deploy",
   "scripts": {

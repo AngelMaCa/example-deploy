@@ -11,6 +11,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14.x'
+          registry-url: https://github.com/mani-test-organization/test-security-library
       - uses: actions/cache@v1
         with:
           path: ~/.npm
@@ -21,6 +22,8 @@ jobs:
         run: |
           npm install
           npm run-script deploy
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
       - name: Create a release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npx semantic-release

@@ -20,7 +20,7 @@ jobs:
             ${{ runner.os }}-node-
       - name: Build
         run: |
-          npm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"
+          npm config set '//https://npm.pkg.github.com/:_authToken' "${NPM_AUTH_TOKEN}"
           npm install
           npm run-script deploy
       - name: Create a release

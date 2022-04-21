@@ -30,7 +30,7 @@ jobs:
           npm install
           npm run-script deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.URL_PBI }}
+          URL_PBI: ${{ secrets.URL_PBI }}
       - name: Create a release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npx semantic-release

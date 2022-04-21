@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterModule } from '@angular/router';
+import { IframeComponent } from './iframe/iframe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SpinnerViewComponent
+    SpinnerViewComponent,
+    IframeComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

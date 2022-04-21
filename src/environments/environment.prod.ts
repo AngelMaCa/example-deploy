@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlPBI: '${URL_PBI}'
 };

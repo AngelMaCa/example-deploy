@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlPBI: 'https://app.powerbi.com/reportEmbed?reportId=2260b3a1-2eb6-430f-b7b2-98abdbdf8b80&autoAuth=true&ctid=b530abf0-8bf1-4c85-92ad-21b1ad4729eb'
 };
 
 /*

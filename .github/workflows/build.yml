@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [master]
   push:
-    branches: [main]
+    branches: [develop]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,6 +29,8 @@ jobs:
           git config user.email angel.mani@eon.com.mx
           npm install
           npm run-script deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.URL_PBI }}
       - name: Create a release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npx semantic-release

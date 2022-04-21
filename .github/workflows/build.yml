@@ -1,7 +1,7 @@
 name: Build
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,8 +11,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14.x'
-          registry-url: https://npm.pkg.github.com/
-          scope: '@mani-test-organization'
       - uses: actions/cache@v1
         with:
           path: ~/.npm
@@ -24,7 +22,6 @@ jobs:
           npm install
           npm run-script deploy
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           URL_PBI: ${{ secrets.URL_PBI }}
       - name: Create a release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'

@@ -12,8 +12,8 @@ export class IframeComponent implements OnInit {
   constructor(private hostElement: ElementRef) { }
 
   ngOnInit(): void {
-    const iframe = this.hostElement.nativeElement.querySelector('iframe');
-    iframe.src = environment.urlPBI;
+    // const iframe = this.hostElement.nativeElement.querySelector('iframe');
+    // iframe.src = environment.urlPBI;
   }
 
 }

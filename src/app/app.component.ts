@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { LoadingService } from './loading.service';
 
 @Component({
@@ -13,6 +14,8 @@ export class AppComponent {
   constructor(
     public loader: LoadingService
   ){
+    let variable = environment.FIREBASE_API_KEY;
+    alert(variable);
   }
 
 }

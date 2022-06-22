@@ -20,8 +20,14 @@ jobs:
       with:
         project: ${{ github.repository }}
         commit: ${{ steps.slug.outputs.sha8 }}
-        level: ${{ steps.release-label.outputs.level }}
         branch: ${{ github.ref }}
         status: ${{ job.status }}
         actionid: ${{ github.repository }}/runs/${{ github.run_id }}
         webhook: ${{ secrets.WEBHOOK }}
+    - name: Google Chat Notification
+      uses: Co-qn/google-chat-notification@releases/v1
+      with:
+        name: Build
+        url: ${{ secrets.WEBHOOK }}
+        status: ${{ job.status }}
+      if: always()

@@ -20,6 +20,7 @@ jobs:
       with:
         project: ${{ github.repository }}
         commit: ${{ steps.slug.outputs.sha8 }}
+        level: ${{ steps.release-label.outputs.level }}
         branch: ${{ github.ref }}
         status: ${{ job.status }}
         actionid: ${{ github.repository }}/runs/${{ github.run_id }}

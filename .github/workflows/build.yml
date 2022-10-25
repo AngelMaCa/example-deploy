@@ -1,7 +1,7 @@
 name: Build
 on:
   push:
-    branches: [main]
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,20 +9,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-        with:
-          node-version: '14.x'
-      - uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+
+      - name: Replace Environment Variables
+        run: |
+          cd ./src/environments
+          envsubst < environment.prod.ts > environment.prod-temp
+          mv environment.prod-temp environment.prod.ts
+          echo "environment.prod.ts"
+          echo -n "$(cat environment.prod.ts )"
+        shell: bash
+        env:
+          FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+
       - name: Build
         run: |
+          echo -n "----------Where am i-----------"
+          echo -n "$(pwd)"
+          echo -n "environment.prod.ts"
           npm install
-          npm run-script deploy
-        env:
-          URL_PBI: ${{ secrets.URL_PBI }}
+          npm run-script build:prod
+
       - name: Create a release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npx semantic-release

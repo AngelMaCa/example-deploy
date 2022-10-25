@@ -4,10 +4,9 @@
   "homepages": "example-deploy",
   "scripts": {
     "ng": "ng",
-    "config": "ts-node ./src/assets/scripts/setEnv.ts",
-    "start": "npm run config -- --environment=dev && ng serve",
+    "start": "npm run --environment=dev && ng serve",
     "build": "ng build",
-    "build:prod": "npm run config -- --environment=prod && ng build --prod",
+    "build:prod": "npm run --environment=prod && ng build --prod",
     "deploy": "npm run build:prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

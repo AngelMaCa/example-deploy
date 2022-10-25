@@ -7,6 +7,9 @@
 # Only exists if Bazel was run
 /bazel-out
 
+#Angular environment variables
+environment.prod.ts
+
 # dependencies
 /node_modules
 
@@ -43,3 +46,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+package-lock.json
+
+# GitHub Registry local
+.npmrc
